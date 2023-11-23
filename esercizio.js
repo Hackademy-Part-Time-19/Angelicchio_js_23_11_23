@@ -40,6 +40,18 @@ function ordina(){
     }
 }
 
+function modifica(elemento){
+    var indice = lista.indexOf(elemento);
+    if(indice===-1){
+        alert("L'elemento '"+elemento+"' non è presente nella lista");
+    }
+    else{
+        var elementoModificato = prompt("Inserire elemento modificato");
+        lista[indice] = elementoModificato;
+        alert("L'elemento '"+elemento+"' è stato modificato in '"+elementoModificato+"'");
+    }
+}
+
 function pulisci(){
     var risposta = prompt("Eliminare lista? (si/no)");
     if(risposta.toLowerCase()==="si"){
@@ -65,7 +77,8 @@ while (operazione > 0) {
         ordina();
     }
     else if (operazione == 4) {
-
+        let elemento = prompt("Selezionare elemento da modificare:");
+        modifica(elemento);
     }
     else if (operazione == 5) {
         pulisci();
