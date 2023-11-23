@@ -2,7 +2,7 @@ let operazione = 1;
 let lista = [];
 
 function aggiungi(elemento) {
-    var risposta = prompt("Inserire l'elemento '" + elemento + "' nella lista? (si/no)")
+    var risposta = prompt("Inserire l'elemento '" + elemento + "' nella lista? (si/no)");
     if (risposta.toLowerCase() === "si") {
         lista.push(elemento);
         alert("Elemento inserito");
@@ -13,7 +13,7 @@ function aggiungi(elemento) {
 }
 
 function elimina(elemento) {
-    var risposta = prompt("Eliminare l'elemento '" + elemento + "' dalla lista? (si/no)")
+    var risposta = prompt("Eliminare l'elemento '" + elemento + "' dalla lista? (si/no)");
     if (risposta.toLowerCase() === "si") {
         var indice = lista.indexOf(elemento);
         if (indice == -1) {
@@ -29,9 +29,19 @@ function elimina(elemento) {
     }
 }
 
+function ordina(){
+    var risposta = prompt("Ordinare lista in ordine alfabetico? (si/no)");
+    if (risposta.toLowerCase() === "si"){
+        lista.sort();
+        alert("Ordinamento cambiato");
+    }
+    else{
+        alert("Operazione annullata");
+    }
+}
 
 while (operazione > 0) {
-    operazione = parseInt(prompt("1:Aggiungi elemento\n2:Elimina un elemento dalla lista\n3:Ordina la lista in ordine alfabetico\n4:Modifica un elemento della lista\n5:Elimina l’intera lista\n6:Visualizza la lista"))
+    operazione = parseInt(prompt("1:Aggiungi elemento\n2:Elimina un elemento dalla lista\n3:Ordina la lista in ordine alfabetico\n4:Modifica un elemento della lista\n5:Elimina l’intera lista\n6:Visualizza la lista"));
     if (operazione == 1) {
         let elemento = prompt("Inserire elemento:");
         aggiungi(elemento);
@@ -41,7 +51,7 @@ while (operazione > 0) {
         elimina(elemento);
     }
     else if (operazione == 3) {
-
+        ordina();
     }
     else if (operazione == 4) {
 
